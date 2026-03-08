@@ -782,9 +782,11 @@
   }
 
   .modal-close {
-    
-\
-    float: right;
+    position: absolute;
+    right: 0px;
+    margin-right: 60px;
+    margin-top: 10px;
+    z-index: 1000;
     background: var(--border);
     border: none;
     width: 36px;
