@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dacylan Santos — Designer Visual & Editor de Vídeo</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body> 
+
+  <header>
+    <!-- NAV -->
+    <nav>
+      <a href="/portfolio_dacylan.html" class="logo">DS.</a> <!-- LOGO-->
+      <ul class="nav-links">
+        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Solicitar Orçamento</a> <!--tenho que colocar o contato do dacylan nesse link-->
+    </nav>
+  </header>
+
+  <main>
+    <!-- principal -->
+    <section class="principal">
+      <div class="container-principal">
+        <div class="aviso-principal">Disponível para projetos</div>
+        <h1>Dacylan <span>Santos</span></h1>
+        <div class="subTitulo-principal">Designer Visual & Editor de Vídeo</div>
+        <p class="subParagrafo-principal">Transformando ideias em conteúdo impactante. Do conceito à tela final com precisão,
+          criatividade e resultado.</p>
+        <div class="butoens-principais">
+          <a href="#trabalhos" class="btn-primary">Ver trabalhos →</a>
+          <a href="#contato" class="btn-secondary">Entrar em contato</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        Scroll
+      </div>
+    </section>
+
+    <!-- TRABALHOS -->
+    <section class="trabalhos" id="trabalhos">
+      <div class="section-label">Portfólio</div>
+      <h2 class="section-title">Trabalhos</h2>
+      <p class="section-desc">Uma seleção de projetos de design e edição de vídeo desenvolvidos para marcas e criadores
+        de conteúdo.</p>
+
+      <div class="tabs">
+        <div class="tab active" onclick="filterTab(this,'all')">Todos</div>
+        <div class="tab" onclick="filterTab(this,'design')">🎨 Design</div>
+        <div class="tab" onclick="filterTab(this,'video')">🎬 Vídeo & Motion</div>
+      </div>
+
+      <div class="grid-trabalhos">
+        <div class="card-trabalho" data-cat="design">
+          <div class="card-thumb" style="background:linear-gradient(135deg,#e8eeff,#c7d6ff)">
+            <div class="card-thumb-icon">🎨</div>
+            <div class="overlay"><span class="overlay-text">Ver projeto</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Design</div>
+            <div class="card-title">Arte Promocional — Lançamento de Marca</div>
+          </div>
+        </div>
+        <div class="card-trabalho" data-cat="design">
+          <div class="card-thumb" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)">
+            <div class="card-thumb-icon">🖼️</div>
+            <div class="overlay"><span class="overlay-text">Ver projeto</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Design</div>
+            <div class="card-title">Thumbnail Pack — Canal YouTube</div>
+          </div>
+        </div>
+        <div class="card-trabalho" data-cat="design">
+          <div class="card-thumb" style="background:linear-gradient(135deg,#e0eaff,#c9d9ff)">
+            <div class="card-thumb-icon">📐</div>
+            <div class="overlay"><span class="overlay-text">Ver projeto</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Design</div>
+            <div class="card-title">Banner e Identidade Visual</div>
+          </div>
+        </div>
+        <div class="card-trabalho" data-cat="video">
+          <div class="card-thumb" style="background:linear-gradient(135deg,#e8f0ff,#bdd4ff)">
+            <div class="card-thumb-icon">🎬</div>
+            <div class="overlay"><span class="overlay-text">Ver projeto</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Vídeo & Motion</div>
+            <div class="card-title">Reels Dinâmicos — Campanha de Produto</div>
+          </div>
+        </div>
+        <div class="card-trabalho" data-cat="video">
+          <div class="card-thumb" style="background:linear-gradient(135deg,#eaf0ff,#c2d3ff)">
+            <div class="card-thumb-icon">🎥</div>
+            <div class="overlay"><span class="overlay-text">Ver projeto</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Vídeo & Motion</div>
+            <div class="card-title">Edição YouTube — Vlog de Viagem</div>
+          </div>
+        </div>
+        <div class="card-trabalho" data-cat="video">
+          <div class="card-thumb" style="background:linear-gradient(135deg,#e2ecff,#c0d1ff)">
+            <div class="card-thumb-icon">✨</div>
+            <div class="overlay"><span class="overlay-text">Ver projeto</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Vídeo & Motion</div>
+            <div class="card-title">Vídeo Promocional — Marca de Moda</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS EM DESTAQUE -->
+    <section id="projetos">
+      <div class="section-label">Em destaque</div>
+      <h2 class="section-title">Projetos Especiais</h2>
+      <p class="section-desc">Projetos que mostram o processo criativo do início ao resultado final.</p>
+
+      <div class="destaques-grid">
+        <div class="destaque-card" onclick="openModal('proj1')">
+          <div class="destaque-thumb">
+            <div class="destaque-thumb-big">🎨</div>
+            <div class="destaque-tag">Design</div>
+          </div>
+          <div class="destaque-body">
+            <h3>Identidade Visual Completa</h3>
+            <p>Criação de identidade visual para startup de tecnologia — do briefing ao manual de marca.</p>
+            <a class="destaque-link">Ver processo criativo →</a>
+          </div>
+        </div>
+        <div class="destaque-card" onclick="openModal('proj2')">
+          <div class="destaque-thumb" style="background:linear-gradient(135deg,#dde8ff,#e8f0ff)">
+            <div class="destaque-thumb-big">🎬</div>
+            <div class="destaque-tag">Vídeo</div>
+          </div>
+          <div class="destaque-body">
+            <h3>Campanha de Lançamento em Vídeo</h3>
+            <p>Série de vídeos curtos para redes sociais com motion graphics e corte dinâmico.</p>
+            <a class="destaque-link">Ver processo criativo →</a>
+          </div>
+        </div>
+        <div class="destaque-card" onclick="openModal('proj3')">
+          <div class="destaque-thumb" style="background:linear-gradient(135deg,#e8eaff,#d0dcff)">
+            <div class="destaque-thumb-big">🖼️</div>
+            <div class="destaque-tag">Manipulação</div>
+          </div>
+          <div class="destaque-body">
+            <h3>Restauração & Manipulação Fotográfica</h3>
+            <p>Restauração avançada de fotos antigas e criação de composições digitais complexas.</p>
+            <a class="destaque-link">Ver processo criativo →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+      <div class="sobre-grid">
+        <div>
+          <div class="section-label">Quem sou</div>
+          <h2 class="section-title">Designer com olhar de editor</h2>
+
+          <div class="stats">
+            <div>
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Anos de experiência</div>
+            </div>
+            <div>
+              <div class="stat-num">80+</div>
+              <div class="stat-label">Projetos entregues</div>
+            </div>
+            <div>
+              <div class="stat-num">40+</div>
+              <div class="stat-label">Clientes satisfeitos</div>
+            </div>
+          </div>
+
+          <div class="sobre-content">
+            <p>Sou designer visual e editor de vídeo apaixonado por transformar ideias em conteúdo que conecta e
+              converte. Trabalho com marcas, criadores e empreendedores para criar uma presença visual forte e
+              consistente em todas as plataformas.</p>
+            <div class="softwares-title">Ferramentas que domino</div>
+            <div class="softwares-grid">
+              <div class="software-pill">Photoshop</div>
+              <div class="software-pill">Illustrator</div>
+              <div class="software-pill">Premiere</div>
+              <div class="software-pill">After Effects</div>
+              <div class="software-pill">CapCut</div>
+              <div class="software-pill">DaVinci</div>
+            </div>
+          </div>
+        </div>
+        <div class="sobre-visual">👤</div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="section-label">O que ofereço</div>
+      <h2 class="section-title">Serviços</h2>
+      <p class="section-desc">Soluções visuais completas para marcas e criadores de conteúdo.</p>
+
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <div class="servico-icon">🎨</div>
+          <h3>Artes para Redes Sociais</h3>
+          <p>Posts, stories, capas e artes promocionais para Instagram, Facebook e outras plataformas.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🖼️</div>
+          <h3>Manipulação & Restauração</h3>
+          <p>Edição avançada de imagens, composições digitais e restauração de fotos antigas.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🎬</div>
+          <h3>Edição de Reels & TikTok</h3>
+          <p>Cortes dinâmicos, motion, trilha e legenda — vídeos curtos que prendem a atenção.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🎥</div>
+          <h3>Edição para YouTube</h3>
+          <p>Vídeos longos com narrativa, motion graphics e identidade visual consistente.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🚀</div>
+          <h3>Conteúdo Visual para Marcas</h3>
+          <p>Pacotes completos de identidade visual, templates e materiais para marcas e negócios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+      <div class="section-label">Vamos trabalhar juntos</div>
+      <h2 class="section-title">Contato</h2>
+      <p class="contato-sub">Tem um projeto em mente? Manda mensagem e vamos conversar sobre como posso ajudar.</p>
+
+      <div class="contato-cards">
+        <a href="https://wa.me/5511999999999" class="contato-card">
+          <span class="contato-icon">💬</span>
+          <div>
+            <div style="font-size:0.72rem;opacity:0.6;margin-bottom:0.1rem">Principal</div>
+            WhatsApp
+          </div>
+        </a>
+        <a href="https://instagram.com/joaosilva" class="contato-card">
+          <span class="contato-icon">📸</span>
+          <div>
+            <div style="font-size:0.72rem;opacity:0.6;margin-bottom:0.1rem">Instagram</div>
+            @joaosilva
+          </div>
+        </a>
+        <a href="mailto:joao@email.com" class="contato-card">
+          <span class="contato-icon">✉️</span>
+          <div>
+            <div style="font-size:0.72rem;opacity:0.6;margin-bottom:0.1rem">Email</div>
+            joao@email.com
+          </div>
+        </a>
+      </div>
+
+      <a href="https://wa.me/5511999999999" class="orcamento-btn">
+        💬 Solicitar orçamento
+      </a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 João Silva — Designer Visual & Editor de Vídeo. Feito com <span>♥</span></p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const projetos = {
+      proj1: {
+        title: 'Identidade Visual Completa',
+        tag: 'Design',
+        icon: '🎨',
+        processo: 'O projeto começou com um briefing detalhado para entender os valores e o público da marca. Foram criados moodboards, paletas de cor e exploração tipográfica antes de chegar ao conceito final aprovado pelo cliente.',
+        resultado: 'Manual de marca completo com logo, tipografia, paleta de cores, templates para redes sociais e diretrizes de uso. A identidade ficou coesa, moderna e com alta adaptabilidade.'
+      },
+      proj2: {
+        title: 'Campanha de Lançamento em Vídeo',
+        tag: 'Vídeo & Motion',
+        icon: '🎬',
+        processo: 'Planejamento do roteiro e storyboard em conjunto com o cliente. Escolha de trilha, identidade de cor, ritmo de corte e elementos de motion para criar uma sensação coerente em toda a série.',
+        resultado: 'Série de 5 vídeos curtos para Instagram e TikTok com alta taxa de engajamento. Os reels geraram mais de 100k visualizações orgânicas nas primeiras 2 semanas.'
+      },
+      proj3: {
+        title: 'Restauração & Manipulação Fotográfica',
+        tag: 'Manipulação',
+        icon: '🖼️',
+        processo: 'Análise dos danos nas fotos originais: manchas, rasgos, perda de cor e nitidez. Processo de restauração feito em camadas no Photoshop com técnicas avançadas de clonagem e reconstrução.',
+        resultado: 'Fotos com décadas de idade completamente restauradas e coloridas digitalmente, preservando a autenticidade e entregando uma memória visual para as famílias.'
+      }
+    };
+
+    function openModal(id) {
+      const p = projetos[id];
+      document.getElementById('modal-content').innerHTML = `
+    <div class="modal-thumb">${p.icon}</div>
+    <div class="modal-tag">${p.tag}</div>
+    <h2>${p.title}</h2>
+    <div class="modal-section"><h4>Processo Criativo</h4><p>${p.processo}</p></div>
+    <div class="modal-section"><h4>Resultado Final</h4><p>${p.resultado}</p></div>
+  `;
+      document.getElementById('modalOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function filterTab(el, cat) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      document.querySelectorAll('.card-trabalho').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
