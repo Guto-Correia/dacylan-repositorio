@@ -388,11 +388,6 @@
     overflow: hidden;
   }
 
-  .card-thumb-icon {
-    font-size: 3.5rem;
-    opacity: 0.3;
-  }
-
   .card-thumb .overlay {
     position: absolute;
     inset: 0;
