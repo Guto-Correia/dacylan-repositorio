@@ -44,14 +44,34 @@ function closeModalDirect() {
   document.body.style.overflow = '';
 }
 
-function filterTab(el, cat) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.querySelectorAll('.card-trabalho').forEach(card => {
-    if (cat === 'all' || card.dataset.cat === cat) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
+const conteiner = document.querySelector("div#projetos");
+        const arquivos = [
+            {
+                tipo: "design",
+                titulo: "gojo é o melhor",
+                arquivo: "imgs/111.jpeg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "subuxa é o melhor",
+                arquivo: "imgs/222.jpeg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "tojinho é o melhor",
+                arquivo: "imgs/333.jpeg"
+
+            }
+        ];
+        arquivos.forEach(projeto => {
+            conteiner.innerHTML += 
+            `<div class="projeto">
+                <div class="pai-img">
+                  <img class="filha-img" src="${projeto.arquivo}" alt="capa do projeto">
+                </div>
+                <span>${projeto.tipo}</span>
+                <h4>${projeto.titulo}</h4>
+             </div>`;
+        });
