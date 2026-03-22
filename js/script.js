@@ -1,3 +1,4 @@
+// alocando os projetos na memoria
 const projetos = {
   proj1: {
     title: 'Identidade Visual Completa',
@@ -22,6 +23,7 @@ const projetos = {
   }
 };
 
+// abre o modal(poup up) e muda o conteudo de dentro
 function openModal(id) {
   const p = projetos[id];
   document.getElementById('modal-content').innerHTML = `
@@ -35,15 +37,18 @@ function openModal(id) {
   document.body.style.overflow = 'hidden';
 }
 
+// guarda a function 
 function closeModal(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
 }
 
+// prepara a function
 function closeModalDirect() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
+// código para integrar os projetos na pagina
 const conteiner = document.querySelector("div#projetos");
         const arquivos = [
             {
@@ -75,3 +80,13 @@ const conteiner = document.querySelector("div#projetos");
                 <h4>${projeto.titulo}</h4>
              </div>`;
         });
+
+// filtragem dos itens(projetos)
+function listDesign() {
+  let paiProjetos = document.querySelector("#projetos");
+  for (let i = 0; i < paiProjetos.length; i++) {
+    
+  }
+  
+}
+// olhar o que o chat falou do código
