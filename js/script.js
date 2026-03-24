@@ -72,7 +72,7 @@ const conteiner = document.querySelector("div#projetos");
         ];
         arquivos.forEach(projeto => {
             conteiner.innerHTML += 
-            `<div class="projeto">
+            `<div class="projeto ${projeto.tipo}">
                 <div class="pai-img">
                   <img class="filha-img" src="${projeto.arquivo}" alt="capa do projeto">
                 </div>
@@ -82,11 +82,13 @@ const conteiner = document.querySelector("div#projetos");
         });
 
 // filtragem dos itens(projetos)
-function listDesign() {
+function filtrar(tipo) {
   let paiProjetos = document.querySelector("#projetos");
-  for (let i = 0; i < paiProjetos.length; i++) {
-    
-  }
-  
+  [...paiProjetos.children].forEach((filho) => {
+    if(filho.classList.contains(tipo) || tipo === "todos"){
+      filho.classList.remove("hidden");
+    }else{
+      filho.classList.add("hidden");
+    }
+  });
 }
-// olhar o que o chat falou do código
