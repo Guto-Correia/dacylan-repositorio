@@ -53,20 +53,68 @@ const conteiner = document.querySelector("div#projetos");
         const arquivos = [
             {
                 tipo: "design",
-                titulo: "gojo é o melhor",
-                arquivo: "imgs/111.jpeg"
+                titulo: "Capa de Album",
+                arquivo: "imgs/albumCapa.jpg"
 
             },
             {
                 tipo: "design",
-                titulo: "subuxa é o melhor",
-                arquivo: "imgs/222.jpeg"
+                titulo: "Banner da Sakura",
+                arquivo: "imgs/bannerSakura.jpg"
 
             },
             {
                 tipo: "design",
-                titulo: "tojinho é o melhor",
-                arquivo: "imgs/333.jpeg"
+                titulo: "Logo Marca",
+                arquivo: "imgs/logomotoboy-nome.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Cartão da Marca",
+                arquivo: "imgs/cartãomotoboy.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Contato da Marca",
+                arquivo: "imgs/fichamotoboy.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Edição Premium",
+                arquivo: "imgs/ctaCapa.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Nota Fiscal",
+                arquivo: "imgs/notaFiscal.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Sasuke Edit",
+                arquivo: "imgs/sasukeEdit.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Thumbnail Sasuke",
+                arquivo: "imgs/sasukeThumb.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Capa Ambum(Street Boy)",
+                arquivo: "imgs/streetboyCapa.jpg"
+
+            },
+            {
+                tipo: "design",
+                titulo: "Venom Capa",
+                arquivo: "imgs/venomCapa.jpg"
 
             }
         ];

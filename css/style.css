@@ -360,7 +360,7 @@
 
   .grid-trabalhos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 1.5rem;
   }
 
@@ -384,8 +384,9 @@
     z-index: 201;
     content: "Ver projeto";
     position: absolute;
-    top: 35%;
-    left: 40%;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
     color: white;
     transition: all 0.2s ease;
     opacity: 0;
@@ -414,6 +415,7 @@
   
   .projeto .pai-img{
     height: 200px;
+    padding: 20px;
     background-image: radial-gradient(circle,var(--off-white),var(--blue-pale));
     display: flex;
     justify-content: center;
