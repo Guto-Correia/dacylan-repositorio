@@ -50,93 +50,110 @@ function closeModalDirect() {
 
 // código para integrar os projetos na pagina
 const conteiner = document.querySelector("div#projetos");
-        const arquivos = [
-            {
-                tipo: "design",
-                titulo: "Capa de Album",
-                arquivo: "imgs/albumCapa.jpg"
+const arquivos = [
+  {
+    tipo: "design",
+    titulo: "Capa de Album",
+    arquivo: "imgs/albumCapa.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Banner da Sakura",
-                arquivo: "imgs/bannerSakura.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Banner da Sakura",
+    arquivo: "imgs/bannerSakura.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Logo Marca",
-                arquivo: "imgs/logomotoboy-nome.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Logo Marca",
+    arquivo: "imgs/logomotoboy-nome.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Cartão da Marca",
-                arquivo: "imgs/cartãomotoboy.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Cartão da Marca",
+    arquivo: "imgs/cartãomotoboy.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Contato da Marca",
-                arquivo: "imgs/fichamotoboy.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Contato da Marca",
+    arquivo: "imgs/fichamotoboy.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Edição Premium",
-                arquivo: "imgs/ctaCapa.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Edição Premium",
+    arquivo: "imgs/ctaCapa.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Nota Fiscal",
-                arquivo: "imgs/notaFiscal.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Nota Fiscal",
+    arquivo: "imgs/notaFiscal.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Sasuke Edit",
-                arquivo: "imgs/sasukeEdit.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Sasuke Edit",
+    arquivo: "imgs/sasukeEdit.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Thumbnail Sasuke",
-                arquivo: "imgs/sasukeThumb.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Thumbnail Sasuke",
+    arquivo: "imgs/sasukeThumb.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Capa Ambum(Street Boy)",
-                arquivo: "imgs/streetboyCapa.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Capa Ambum(Street Boy)",
+    arquivo: "imgs/streetboyCapa.jpg"
 
-            },
-            {
-                tipo: "design",
-                titulo: "Venom Capa",
-                arquivo: "imgs/venomCapa.jpg"
+  },
+  {
+    tipo: "design",
+    titulo: "Venom Capa",
+    arquivo: "imgs/venomCapa.jpg"
 
-            }
-        ];
-        arquivos.forEach(projeto => {
-            conteiner.innerHTML += 
-            `<div class="projeto ${projeto.tipo}">
+  }
+];
+arquivos.forEach(projeto => {
+  conteiner.innerHTML +=
+    `<div class="projeto ${projeto.tipo}" onclick="openProjeto()">
                 <div class="pai-img">
                   <img class="filha-img" src="${projeto.arquivo}" alt="capa do projeto">
                 </div>
                 <span>${projeto.tipo}</span>
                 <h4>${projeto.titulo}</h4>
              </div>`;
-        });
+});
 
 // filtragem dos itens(projetos)
 function filtrar(tipo) {
+  let btnFiltro = document.querySelector(".tabs");
+  [...btnFiltro.children].forEach((tabzinha) => {
+    if (tabzinha.classList.contains(tipo)) {
+      tabzinha.classList.add("active");
+    } else {
+      tabzinha.classList.remove("active");
+    }
+  })
+
+
   let paiProjetos = document.querySelector("#projetos");
   [...paiProjetos.children].forEach((filho) => {
-    if(filho.classList.contains(tipo) || tipo === "todos"){
+    if (filho.classList.contains(tipo) || tipo === "todos") {
       filho.classList.remove("hidden");
-    }else{
+    } else {
       filho.classList.add("hidden");
     }
   });
+}
+
+// function para o poup up dos itens
+// ESSA FUNCTION DA DANDO CONFLITO COM A DE ABRIR OS PROJETOS ESPECIAIS; TEM QUE ARRUMAS DEPOIS!!!! 
+function openProjeto() {
+  document.getElementById('modalOverlay').classList.add('open');
+
 }

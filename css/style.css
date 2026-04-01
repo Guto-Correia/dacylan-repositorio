@@ -384,9 +384,9 @@
     z-index: 201;
     content: "Ver projeto";
     position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(-50%,-50%);
+    top: 102px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     transition: all 0.2s ease;
     opacity: 0;
