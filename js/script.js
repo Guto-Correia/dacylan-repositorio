@@ -116,9 +116,16 @@ const arquivos = [
     titulo: "Venom Capa",
     arquivo: "imgs/venomCapa.jpg"
 
+  },
+  {
+    tipo: "video",
+    thumb: "imgs/capa-video-gojo.jpg",
+    titulo: "Edit Gojo",
+    arquivo: "imgs/videoGojo.mp4"
   }
 ];
 arquivos.forEach(projeto => {
+  // colocar um if perguntando se o tipo do projeto é video ou não,ai muda a estrutura para cada
   conteiner.innerHTML +=
     `<div class="projeto ${projeto.tipo}" onclick="openProjeto()">
                 <div class="pai-img">
