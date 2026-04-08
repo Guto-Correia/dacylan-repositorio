@@ -1,51 +1,23 @@
-// alocando os projetos na memoria
-const projetos = {
-  proj1: {
-    title: 'Identidade Visual Completa',
-    tag: 'Design',
-    icon: '🎨',
-    processo: 'O projeto começou com um briefing detalhado para entender os valores e o público da marca. Foram criados moodboards, paletas de cor e exploração tipográfica antes de chegar ao conceito final aprovado pelo cliente.',
-    resultado: 'Manual de marca completo com logo, tipografia, paleta de cores, templates para redes sociais e diretrizes de uso. A identidade ficou coesa, moderna e com alta adaptabilidade.'
-  },
-  proj2: {
-    title: 'Campanha de Lançamento em Vídeo',
-    tag: 'Vídeo & Motion',
-    icon: '🎬',
-    processo: 'Planejamento do roteiro e storyboard em conjunto com o cliente. Escolha de trilha, identidade de cor, ritmo de corte e elementos de motion para criar uma sensação coerente em toda a série.',
-    resultado: 'Série de 5 vídeos curtos para Instagram e TikTok com alta taxa de engajamento. Os reels geraram mais de 100k visualizações orgânicas nas primeiras 2 semanas.'
-  },
-  proj3: {
-    title: 'Restauração & Manipulação Fotográfica',
-    tag: 'Manipulação',
-    icon: '🖼️',
-    processo: 'Análise dos danos nas fotos originais: manchas, rasgos, perda de cor e nitidez. Processo de restauração feito em camadas no Photoshop com técnicas avançadas de clonagem e reconstrução.',
-    resultado: 'Fotos com décadas de idade completamente restauradas e coloridas digitalmente, preservando a autenticidade e entregando uma memória visual para as famílias.'
-  }
-};
+// filtragem dos itens(projetos)
+function filtrar(tipo) {
+  let btnFiltro = document.querySelector(".tabs");
+  [...btnFiltro.children].forEach((tabzinha) => {
+    if (tabzinha.classList.contains(tipo)) {
+      tabzinha.classList.add("active");
+    } else {
+      tabzinha.classList.remove("active");
+    }
+  })
 
-// abre o modal(poup up) e muda o conteudo de dentro
-function openModal(id) {
-  const p = projetos[id];
-  document.getElementById('modal-content').innerHTML = `
-    <div class="modal-thumb">${p.icon}</div>
-    <div class="modal-tag">${p.tag}</div>
-    <h2>${p.title}</h2>
-    <div class="modal-section"><h4>Processo Criativo</h4><p>${p.processo}</p></div>
-    <div class="modal-section"><h4>Resultado Final</h4><p>${p.resultado}</p></div>
-  `;
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
 
-// guarda a function 
-function closeModal(e) {
-  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
-}
-
-// prepara a function
-function closeModalDirect() {
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
+  let paiProjetos = document.querySelector("#projetos");
+  [...paiProjetos.children].forEach((filho) => {
+    if (filho.classList.contains(tipo) || tipo === "todos") {
+      filho.classList.remove("hidden");
+    } else {
+      filho.classList.add("hidden");
+    }
+  });
 }
 
 // código para integrar os projetos na pagina
@@ -124,9 +96,19 @@ const arquivos = [
     arquivo: "imgs/videoGojo.mp4"
   }
 ];
+
 arquivos.forEach(projeto => {
-  // colocar um if perguntando se o tipo do projeto é video ou não,ai muda a estrutura para cada
-  conteiner.innerHTML +=
+  if(projeto.tipo === "video"){
+    conteiner.innerHTML +=
+    `<div class="projeto ${projeto.tipo}" onclick="openProjeto()">
+        <div class="pai-img">
+          <img class="filha-img" src="${projeto.thumb}" alt="capa do projeto">
+        </div>
+        <span>${projeto.tipo}</span>
+        <h4>${projeto.titulo}</h4>
+      </div>`;
+  } else{
+    conteiner.innerHTML +=
     `<div class="projeto ${projeto.tipo}" onclick="openProjeto()">
                 <div class="pai-img">
                   <img class="filha-img" src="${projeto.arquivo}" alt="capa do projeto">
@@ -134,33 +116,61 @@ arquivos.forEach(projeto => {
                 <span>${projeto.tipo}</span>
                 <h4>${projeto.titulo}</h4>
              </div>`;
+      }
 });
 
-// filtragem dos itens(projetos)
-function filtrar(tipo) {
-  let btnFiltro = document.querySelector(".tabs");
-  [...btnFiltro.children].forEach((tabzinha) => {
-    if (tabzinha.classList.contains(tipo)) {
-      tabzinha.classList.add("active");
-    } else {
-      tabzinha.classList.remove("active");
-    }
-  })
-
-
-  let paiProjetos = document.querySelector("#projetos");
-  [...paiProjetos.children].forEach((filho) => {
-    if (filho.classList.contains(tipo) || tipo === "todos") {
-      filho.classList.remove("hidden");
-    } else {
-      filho.classList.add("hidden");
-    }
-  });
-}
-
-// function para o poup up dos itens
+// function para o popup dos itens
 // ESSA FUNCTION DA DANDO CONFLITO COM A DE ABRIR OS PROJETOS ESPECIAIS; TEM QUE ARRUMAS DEPOIS!!!! 
 function openProjeto() {
-  document.getElementById('modalOverlay').classList.add('open');
+}
 
+// alocando os projetos na memoria
+const projetos = {
+  proj1: {
+    title: 'Identidade Visual Completa',
+    tag: 'Design',
+    arquivo: 'imgs/sasukeThumb.jpg',
+    processo: 'O projeto começou com um briefing detalhado para entender os valores e o público da marca. Foram criados moodboards, paletas de cor e exploração tipográfica antes de chegar ao conceito final aprovado pelo cliente.',
+    resultado: 'Manual de marca completo com logo, tipografia, paleta de cores, templates para redes sociais e diretrizes de uso. A identidade ficou coesa, moderna e com alta adaptabilidade.'
+  },
+  proj2: {
+    title: 'Campanha de Lançamento em Vídeo',
+    tag: 'Vídeo & Motion',
+    // precisa colocar um video aqui
+    arquivo: 'imgs/', 
+    processo: 'Planejamento do roteiro e storyboard em conjunto com o cliente. Escolha de trilha, identidade de cor, ritmo de corte e elementos de motion para criar uma sensação coerente em toda a série.',
+    resultado: 'Série de 5 vídeos curtos para Instagram e TikTok com alta taxa de engajamento. Os reels geraram mais de 100k visualizações orgânicas nas primeiras 2 semanas.'
+  },
+  proj3: {
+    title: 'Restauração & Manipulação Fotográfica',
+    tag: 'Manipulação',
+    arquivo: 'imgs/bannerSakura.jpg',
+    processo: 'Análise dos danos nas fotos originais: manchas, rasgos, perda de cor e nitidez. Processo de restauração feito em camadas no Photoshop com técnicas avançadas de clonagem e reconstrução.',
+    resultado: 'Fotos com décadas de idade completamente restauradas e coloridas digitalmente, preservando a autenticidade e entregando uma memória visual para as famílias.'
+  }
+};
+
+// abre o modal(poup up) e muda o conteudo de dentro
+function openModal(id) {
+  const p = projetos[id];
+  document.getElementById('modal-content').innerHTML = `
+    <div class="pai-img-thumb"><img src="${p.arquivo}" alt="Imagem do projeto"></div>
+    <div class="modal-tag">${p.tag}</div>
+    <h2>${p.title}</h2>
+    <div class="modal-section"><h4>Processo Criativo</h4><p>${p.processo}</p></div>
+    <div class="modal-section"><h4>Resultado Final</h4><p>${p.resultado}</p></div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+// guarda a function 
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+}
+
+// prepara a function
+function closeModalDirect() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
 }

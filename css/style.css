@@ -443,7 +443,7 @@
   /* DESTAQUES */
   .destaques-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
@@ -455,7 +455,6 @@
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.25s, box-shadow 0.25s;
-    position: relative;
   }
 
   .destaque-card:hover {
@@ -466,15 +465,14 @@
   .destaque-thumb {
     height: 240px;
     background: linear-gradient(135deg, var(--blue-pale), #d0dcff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
   }
 
-  .destaque-thumb-big {
-    font-size: 5rem;
-    opacity: 0.25;
+  .destaque-thumb img{
+    width: 100%;
+    object-fit: cover;
+    max-height: 240px;
+    height: 100%;
   }
 
   .destaque-tag {
@@ -777,6 +775,7 @@
   }
 
   .modal {
+    position: relative;
     background: white;
     border-radius: 24px;
     max-width: 700px;
@@ -794,7 +793,8 @@
 
   .modal-close {
     position: absolute;
-    right: 0px;
+    top: 3%;
+    left: 90%;
     margin-right: 60px;
     margin-top: 10px;
     z-index: 1000;
@@ -814,6 +814,17 @@
     color: var(--blue);
   }
 
+  .pai-img-thumb{
+    height: 260px;
+  }
+
+  .pai-img-thumb img{
+    object-fit: contain;
+    width: 100%;
+    max-height: 260px;
+    height: 100%;
+  }
+
   .modal h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
@@ -828,6 +839,7 @@
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0.3rem 0.9rem;
+    margin-top: 25px;
     border-radius: 50px;
     margin-bottom: 1.5rem;
   }
@@ -848,18 +860,6 @@
     color: var(--text-muted);
     line-height: 1.7;
     font-size: 0.95rem;
-  }
-
-  .modal-thumb {
-    height: 200px;
-    background: linear-gradient(135deg, var(--blue-pale), #d0dcff);
-    border-radius: 14px;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    opacity: 0.3;
   }
 
   /* ocutação da barra lateral do modal */
