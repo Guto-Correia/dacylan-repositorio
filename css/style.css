@@ -825,6 +825,11 @@
     height: 100%;
   }
 
+  .pai-img-thumb video{
+    max-height: 260px;
+    width: 100%;
+  }
+
   .modal h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
