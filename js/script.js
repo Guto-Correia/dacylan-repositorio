@@ -97,10 +97,12 @@ const arquivos = [
   }
 ];
 
+let i = 0;
+
 arquivos.forEach(projeto => {
   if(projeto.tipo === "video"){
     conteiner.innerHTML +=
-    `<div class="projeto ${projeto.tipo}" onclick="openProjeto()">
+    `<div class="projeto ${projeto.tipo}" onclick="openProjeto(${i})">
         <div class="pai-img">
           <img class="filha-img" src="${projeto.thumb}" alt="capa do projeto">
         </div>
@@ -109,7 +111,7 @@ arquivos.forEach(projeto => {
       </div>`;
   } else{
     conteiner.innerHTML +=
-    `<div class="projeto ${projeto.tipo}" onclick="openProjeto()">
+    `<div class="projeto ${projeto.tipo}" onclick="openProjeto(${i})">
                 <div class="pai-img">
                   <img class="filha-img" src="${projeto.arquivo}" alt="capa do projeto">
                 </div>
@@ -117,18 +119,22 @@ arquivos.forEach(projeto => {
                 <h4>${projeto.titulo}</h4>
              </div>`;
       }
-     let projEventos= document.querySelector(".projeto");
-     let i = 0;
-     
+    i++;
+
 });
 
 // function para o popup dos itens
 // ESSA FUNCTION DA DANDO CONFLITO COM A DE ABRIR OS PROJETOS ESPECIAIS; TEM QUE ARRUMAS DEPOIS!!!! 
-function openProjeto() {
+function openProjeto(numDiv) {
   let poupup = document.querySelector('.proj-poupup');
-  console.log()
-  // tenho que arrumar isso,arruma o responsivo e mudar o icon da página
+  poupup.innerHTML += `<img src="${arquivos[numDiv].arquivo}" alt="imagem do projeto ampliada">`;
+  document.getElementById('proj-poupup').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  console.log();
 }
+ // tenho que arrumar isso,arruma o responsivo e mudar o icon da página
+// se eu sei o num da div que foi clickada,eu pego o conteudo correspondente da array e exibo
+// terminar isso
 
 // alocando os projetos na memoria
 const projetos = {
