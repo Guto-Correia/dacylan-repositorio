@@ -117,6 +117,9 @@ arquivos.forEach(projeto => {
                 <h4>${projeto.titulo}</h4>
              </div>`;
       }
+     let projEventos= document.querySelector(".projeto");
+     let i = 0;
+     
 });
 
 // function para o popup dos itens
