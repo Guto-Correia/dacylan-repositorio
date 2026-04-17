@@ -126,11 +126,25 @@ arquivos.forEach(projeto => {
 // function para o popup dos itens
 // ESSA FUNCTION DA DANDO CONFLITO COM A DE ABRIR OS PROJETOS ESPECIAIS; TEM QUE ARRUMAS DEPOIS!!!! 
 function openProjeto(numDiv) {
-  let poupup = document.querySelector('.proj-poupup');
-  poupup.innerHTML += `<img src="${arquivos[numDiv].arquivo}" alt="imagem do projeto ampliada">`;
-  document.getElementById('proj-poupup').classList.add('open');
+  let divP = arquivos[numDiv];
+    if (divP.tipo === "video") {
+  document.getElementById('modal-content').innerHTML = `
+    <video controls><source src="${divP.arquivo}" type="video/mp4">
+      Se esse video não carregou,seu navegador não é compativel
+    </video>
+  `;
+  document.getElementById('modal').classList.remove("modal");
+  document.getElementById('modal').classList.add("projeto-content");
+  } else{
+  document.getElementById('modal-content').innerHTML = `
+    <img src="${divP.arquivo}" alt="Imagem do projeto">
+  `;
+  document.getElementById('modal').classList.remove("modal");
+  document.getElementById('modal').classList.add("projeto-content");
+  }
+
+  document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
-  console.log();
 }
  // tenho que arrumar isso,arruma o responsivo e mudar o icon da página
 // se eu sei o num da div que foi clickada,eu pego o conteudo correspondente da array e exibo
@@ -202,4 +216,7 @@ function closeModal(e) {
 function closeModalDirect() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
+    document.getElementById('modal-content').innerHTML = ``;
+    document.getElementById('modal').classList.remove("projeto-content");
+    document.getElementById('modal').classList.add("modal");
 }

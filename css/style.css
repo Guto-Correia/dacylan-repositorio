@@ -787,6 +787,14 @@
     transition: transform 0.3s;
   }
 
+  .projeto-content{
+    max-width: auto !important;
+    width: auto !important;
+    max-height: auto !important;
+    overflow-y: none   !important;
+    padding: 0.6rem !important;
+  }
+
   .modal-overlay.open .modal {
     transform: translateY(0);
   }
