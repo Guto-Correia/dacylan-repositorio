@@ -145,10 +145,9 @@ function openProjeto(numDiv) {
 
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-close').classList.add('btn-menor');
 }
  // tenho que arrumar isso,arruma o responsivo e mudar o icon da página
-// se eu sei o num da div que foi clickada,eu pego o conteudo correspondente da array e exibo
-// terminar isso
 
 // alocando os projetos na memoria
 const projetos = {
@@ -219,4 +218,5 @@ function closeModalDirect() {
     document.getElementById('modal-content').innerHTML = ``;
     document.getElementById('modal').classList.remove("projeto-content");
     document.getElementById('modal').classList.add("modal");
+    document.querySelector('.modal-close').classList.remove("btn-menor");
 }

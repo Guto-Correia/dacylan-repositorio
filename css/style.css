@@ -830,6 +830,10 @@
     transition: all 0.2s;
   }
 
+  .btn-menor{
+    left: 95% !important;
+  }
+
   .modal-close:hover {
     background: var(--blue-pale);
     color: var(--blue);
@@ -936,7 +940,7 @@
     color: var(--blue-light);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .nav-links {
       display: none;
     }
@@ -953,8 +957,20 @@
     .stats {
       gap: 1.5rem;
     }
+
+    /* Mudança na loc do butão dos poupops */
+
+    .projeto-content{
+      position: relative;
+    }
+
+    .btn-menor {
+      top: -60px;
+    }
   }
 
   .hidden {
     display: none !important;
   }
+
+  
