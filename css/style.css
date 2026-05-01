@@ -969,6 +969,42 @@
     }
   }
 
+   @media (max-width: 400px) {
+    .hero-scroll{
+      display: none;
+    }
+    .modal{
+      padding: 2rem;
+    }
+    .modal .modal-close{
+      width: 30px;
+      height: 30px;
+      left: 84%;
+      top: -1%;
+    }
+    .pai-img-thumb{
+      height: auto  ;
+    }
+    .pai-img-thumb img,.pai-img-thumb video{
+      margin-top: 10px;
+    }
+    .modal-tag{
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    .modal h2{
+      font-size: 1.5rem;
+    }
+    .modal-section h4{
+      font-size: 0.7rem;
+    }
+    .modal-section p{
+          line-height: 1.5;
+    font-size: 0.8rem;
+    }
+
+   }
+
   .hidden {
     display: none !important;
   }

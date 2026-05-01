@@ -166,7 +166,7 @@ const projetos = {
     resultado: 'Série de 5 vídeos curtos para Instagram e TikTok com alta taxa de engajamento. Os reels geraram mais de 100k visualizações orgânicas nas primeiras 2 semanas.'
   },
   proj3: {
-    title: 'Restauração & Manipulação Fotográfica',
+    title: 'Restauração e Manipulação Fotográfica',
     tag: 'Manipulação',
     arquivo: 'imgs/bannerSakura.jpg',
     processo: 'Análise dos danos nas fotos originais: manchas, rasgos, perda de cor e nitidez. Processo de restauração feito em camadas no Photoshop com técnicas avançadas de clonagem e reconstrução.',
